@@ -6,8 +6,8 @@
 ## Description:   makefile for ip finder.
 ######################################################################
 
-CXX=g++
-CXXFLAGS=-Wall -O2
+CXX=clang++
+CXXFLAGS=-Wall -O2 -Werror
 
 TARGET=count
 SRC=main.cpp ip.cpp loganalysis.cpp

@@ -32,6 +32,19 @@ typedef struct address {
     string location;
 } Address;
 
+//map<string, long>::const_iterator
+//T& operator<(T &lhs, T &rhs)
+/*
+template <typename T>
+T& cmp(T &lhs, T &rhs)
+{
+    if (lhs.second < rhs. second)
+        return lhs;
+    else
+        return rhs;
+}
+*/
+
 class LogAnalysis
 {
 public:
@@ -40,6 +53,7 @@ public:
     virtual ~LogAnalysis();
 
     void getin_ip();
+    void sortBytimes();
     void getout_rst();
 
 private:
@@ -63,8 +77,12 @@ private:
 
     //store counted data from ogn_ip;
     map < string, long >cnt;
+    
     map < string, long >::iterator cnt_idx;
     map < string, long >::const_iterator cnt_cstidx;
+
+    map <long, string> cnt_reverse;     // for sort by value;
+    map <long, string>::const_reverse_iterator cnt_reverseidx;
 
     //I/O operation for data files;
     ifstream infile;

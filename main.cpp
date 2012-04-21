@@ -7,6 +7,7 @@
 //====================================================================
 
 #include <iostream>
+#include <cstring>
 #include "loganalysis.h"
 
 void about();
@@ -24,20 +25,20 @@ int main(int argc, char *argv[])
         ans = new LogAnalysis();
     }
     else if (argc == 2) {
-        if (argv[1] != "help") {
+        if (strcmp(argv[1], "help")) {
             throw runtime_error("Invaild argument!");
             usage();
         }
         else {
             about();
             usage();
+            return 0;
         }
     }
     else if (argc == 3) {
         ans = new LogAnalysis(argv[1], argv[2]);
     }
         
-
     ans->getin_ip();
     ans->getout_rst();
     
@@ -53,11 +54,11 @@ void about() {
 
 
 void usage() {
-    cout << "Usage: " << endl;
-    cout << "1. ./count " << endl;
-    cout << "This use \"\" as default ipdata file and \"\" as default result output file"
+    cout << "Usage: \n";
+    cout << "1 ./count\n";
+    cout << "This use \"ipdata\" as default ipdata file and \"rstdata\" as default result output file\n"
          << endl;
-    cout << "2. ./count ipdata resultfile" << endl;
-    cout << "You MUST specify \"ipdata\" for ip collection and \"resultfile\" for result output file"
+    cout << "2 ./count ipdata resultfile\n";
+    cout << "You MUST specify \"ipdata\" for ip collection and \"resultfile\" for result output file."
          << endl;
 }

@@ -76,7 +76,7 @@ void CIpFinder::IpValue2IpString(unsigned long ipValue,
 		return;
 	}
 
-	snprintf(pszIpAddress, nMaxCount, "%d.%d.%d.%d", (ipValue & 0xFF000000) >> 24,
+	snprintf(pszIpAddress, nMaxCount, "%lu.%lu.%lu.%lu", (ipValue & 0xFF000000) >> 24,
 			  (ipValue & 0x00FF0000) >> 16, (ipValue & 0x0000FF00) >> 8,ipValue & 0x000000FF);
 	pszIpAddress[nMaxCount - 1] = 0;
 }

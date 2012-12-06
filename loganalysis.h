@@ -12,13 +12,9 @@
 
 #include <iostream>
 #include <fstream>
-//#include <cstdlib>
-
 #include <string>
 #include <vector>
 #include <map>
-
-#include <algorithm>
 #include <stdexcept>
 #include <utility>
 
@@ -32,19 +28,6 @@ typedef struct address {
     string location;
 } Address;
 
-//map<string, long>::const_iterator
-//T& operator<(T &lhs, T &rhs)
-/*
-template <typename T>
-T& cmp(T &lhs, T &rhs)
-{
-    if (lhs.second < rhs. second)
-        return lhs;
-    else
-        return rhs;
-}
-*/
-
 class LogAnalysis
 {
 public:
@@ -57,14 +40,6 @@ public:
     void getout_rst();
 
 private:
-    //help
-//    void help();
-    //about
-//    void about();
-    
-    //usage
-    //  void usage();
-        
     //a class search QQWry.dat file from Internet.
     CIpFinder *fip;
 

@@ -3,9 +3,9 @@
 #Author:   admirestator <admirestator@gmail.com>
 #Comment:  run analysis process.
 
-rm -rf rstdata
 
-if [ $# -ne 2 ]; then
+rm -rf result
+if [ $# -ne 1 ]; then
 	echo "Error Arguments"
 	echo "Usage: $0 logfile"
 	exit -1
@@ -18,5 +18,7 @@ echo "get... ip collection from log file..."
 echo "analysis ip collection..."
 make && ./count
 
+iconv -c -f GB2312 -t UTF8 <rstdata> result
+rm -rf rstdata
 echo "finished analysis!"
-echo "See 'rstdata' file or the file you had specified!"
+echo "See 'result' file or the file you had specified!"

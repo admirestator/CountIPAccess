@@ -47,14 +47,14 @@ private:
     Address addr;
     
     //store orginal ip data from files;
-    vector < string > ogn_ip;
-    vector < string >::iterator ogn_ip_idx;
+    vector <string> ogn_ip;
+    vector <string>::iterator ogn_ip_idx;
 
     //store counted data from ogn_ip;
-    map < string, long >cnt;
+    map <string, long>cnt;
     
-    map < string, long >::iterator cnt_idx;
-    map < string, long >::const_iterator cnt_cstidx;
+    map <string, long>::iterator cnt_idx;
+    map <string, long>::const_iterator cnt_cstidx;
 
     map <long, string> cnt_reverse;     // for sort by value;
     map <long, string>::const_reverse_iterator cnt_reverseidx;
@@ -62,8 +62,8 @@ private:
     //I/O operation for data files;
     ifstream infile;
     ofstream outfile;
-    ifstream &open_file (ifstream & in, const string & file);
-    ofstream &open_file (ofstream & out, const string & file);
+    ifstream &open_file (ifstream &in, const string &file);
+    ofstream &open_file (ofstream &out, const string &file);
 
 };
 

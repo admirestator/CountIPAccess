@@ -6,7 +6,6 @@
 // Description:   main file for log analysis.
 //====================================================================
 
-#include <iostream>
 #include <cstring>
 #include "loganalysis.h"
 
@@ -17,31 +16,28 @@ int main(int argc, char *argv[])
 {
     LogAnalysis *ans;
     
-    if (argc < 1 || argc > 3) {
+    if (argc < 1 || argc > 3) {         // argument illegall
         throw runtime_error("Invaild argument!");
         usage();
-        return 0;
-    }
-    else if (argc == 1) {
+    } else if (argc == 1) {             // default config
         ans = new LogAnalysis();
         ans->getin_ip();
         ans->getout_rst();
-    }
-    else if (argc == 2) {
-        if (strcmp(argv[1], "help")) {
+    } else if (argc == 2) {             // help
+        if (strncmp(argv[1], "help", 4)) {
             throw runtime_error("Invaild argument!");
             usage();
-        }
-        else {
+        } else {
             about();
             usage();
-            return 0;
         }
-    }
-    else if (argc == 3) {
+    } else if (argc == 3) {             // custome config
         ans = new LogAnalysis(argv[1], argv[2]);
+        ans->getin_ip();
+        ans->getout_rst();
     }
-        
+
+    delete ans;
 	return 0;
 }
 

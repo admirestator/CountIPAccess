@@ -1,6 +1,6 @@
 //====================================================================
 // Filename:      loganalysis.h
-// Version:       0.02
+// Version:       0.10
 // Author:        吴旭 <admirestator@gmail.com>
 // Created at:    Mon Mar 12 08:59:50 2012
 // Description:   Defination of class LogAnalysis.Count the
@@ -21,7 +21,7 @@
 #include "ip.h"
 
 using namespace std;
-const string version = "0.02";
+const string version = "0.10";
 
 typedef struct address {
     string country;
@@ -40,7 +40,7 @@ public:
     void getout_rst();
 
 private:
-    //a class search QQWry.dat file from Internet.
+    //a class lookup ip with QQWry.dat from Internet.
     CIpFinder *fip;
 
     //address data structor
@@ -55,7 +55,6 @@ private:
     
     map <string, long>::iterator cnt_idx;
     map <string, long>::const_iterator cnt_cstidx;
-
     map <long, string> cnt_reverse;     // for sort by value;
     map <long, string>::const_reverse_iterator cnt_reverseidx;
 
@@ -64,7 +63,6 @@ private:
     ofstream outfile;
     ifstream &open_file (ifstream &in, const string &file);
     ofstream &open_file (ofstream &out, const string &file);
-
 };
 
 #endif /* _LOGANALYSIS_H_ */

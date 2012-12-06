@@ -6,6 +6,14 @@ License
 -------
 GPLv3
 
+Usage
+-----
+##To get the final file which named 'result'##
+./analysis.sh ipfiles
+
+##To get the only ip file which named 'ipdata'##
+./getip.pl  ipfiles
+
 analysis.sh
 -----------
 The main process script written in bash for count

@@ -20,9 +20,12 @@ int main(int argc, char *argv[])
     if (argc < 1 || argc > 3) {
         throw runtime_error("Invaild argument!");
         usage();
+        return 0;
     }
     else if (argc == 1) {
         ans = new LogAnalysis();
+        ans->getin_ip();
+        ans->getout_rst();
     }
     else if (argc == 2) {
         if (strcmp(argv[1], "help")) {
@@ -39,9 +42,6 @@ int main(int argc, char *argv[])
         ans = new LogAnalysis(argv[1], argv[2]);
     }
         
-    ans->getin_ip();
-    ans->getout_rst();
-    
 	return 0;
 }
 

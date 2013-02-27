@@ -16,7 +16,7 @@ echo "get... ip collection from log file..."
 ./getip.pl $1
 
 echo "analysis ip collection..."
-make && ./count
+make -j4 && ./count
 
 iconv -c -f GB2312 -t UTF8 <rstdata> result
 rm -rf rstdata

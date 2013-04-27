@@ -7,20 +7,22 @@
 //====================================================================
 
 #include <cstring>
+#include <memory>
 #include "loganalysis.h"
+
 
 void about();
 void usage();
 
 int main(int argc, char *argv[])
 {
-    LogAnalysis *ans;
+    //LogAnalysis *ans;
     
     if (argc < 1 || argc > 3) {         // argument illegall
         throw runtime_error("Invaild argument!");
         usage();
     } else if (argc == 1) {             // default config
-        ans = new LogAnalysis();
+        std::auto_ptr<LogAnalysis> ans(new LogAnalysis());
         ans->getin_ip();
         ans->getout_rst();
     } else if (argc == 2) {             // help
@@ -32,12 +34,11 @@ int main(int argc, char *argv[])
             usage();
         }
     } else if (argc == 3) {             // custome config
-        ans = new LogAnalysis(argv[1], argv[2]);
+        std::auto_ptr<LogAnalysis> ans(new LogAnalysis(argv[1], argv[2]));
         ans->getin_ip();
         ans->getout_rst();
     }
 
-    delete ans;
 	return 0;
 }
 

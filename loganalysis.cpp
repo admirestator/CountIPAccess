@@ -7,6 +7,7 @@
 //====================================================================
 
 #include <iomanip>
+#include <memory>
 #include "loganalysis.h"
 
 LogAnalysis::LogAnalysis()
